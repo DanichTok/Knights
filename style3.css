@@ -1,0 +1,199 @@
+    /* ========== RESET & BASE ========== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --font-family: "Minecraft Rus", "Courier New", monospace;
+      --second-family: "Segoe UI", sans-serif;
+      --bg-color: #131313;
+      --text-light: #adb5bd;
+      --text-white: #fff;
+      --accent-blue: #2588eb;
+      --hover-gray: #888;
+    }
+
+    body {
+      background: var(--bg-color);
+      color: var(--text-white);
+      font-family: var(--font-family);
+      min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* ========== HEADER ========== */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: -0.5vh 4vw;
+    }
+
+    .V {
+      height: 3.5vh;
+      width: auto;
+      stroke: white;
+      stroke-width: 4px;
+    }
+
+    .image-container {
+      max-width: 100vw;
+    max-height: 29vh;
+      overflow: hidden;
+    }
+
+    .img4 {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.4s cubic-bezier(0.33, 0, 0.66, 0.33);
+    }
+
+    /* ========== MAIN CONTENT ========== */
+    .main-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 4vw;
+      margin-top: 2vh;
+    }
+
+    .TextR {
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      line-height: 1;
+      margin-bottom: 1.5vh;
+    }
+
+    .textC {
+      font-size: clamp(1rem, 2.2vw, 1.5rem);
+      line-height: 1.4;
+      max-width: 800px;
+      margin: 0 auto 4vh;
+      white-space: pre-line;
+    }
+
+    /* ========== NAV BUTTONS ========== */
+    .nav-buttons {
+      display: flex;
+      gap: 3vw;
+      margin-bottom: 5vh;
+    }
+
+    .knopka-group,
+    .knopka-group-2,
+    .knopka-group-3 {
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .knopka1, .knopka2, .knopka3 {
+      font-size: clamp(0.9rem, 1.8vw, 1.1rem);
+      color: var(--text-light);
+      transition: color 0.15s ease;
+      margin-bottom: 0.3vh;
+    }
+
+    .knopka__1, .knopka2__2, .knopka3__3 {
+      width: 100%;
+      height: 2px;
+      background: var(--text-light);
+      transition: background 0.15s ease;
+    }
+
+    .knopka-group:hover .knopka1,
+    .knopka-group-2:hover .knopka2,
+    .knopka-group-3:hover .knopka3 {
+      color: #e0e0e0;
+    }
+
+    .knopka-group:hover .knopka__1,
+    .knopka-group-2:hover .knopka2__2,
+    .knopka-group-3:hover .knopka3__3 {
+      background: #e0e0e0;
+    }
+
+    .active .knopka1,
+    .active .knopka2,
+    .active .knopka3 {
+      color: var(--text-white) !important;
+    }
+
+    .active .knopka__1,
+    .active .knopka2__2,
+    .active .knopka3__3 {
+      background: var(--text-white) !important;
+    }
+
+    /* ========== ICON BLOCKS ========== */
+    .icons-row {
+      display: flex;
+      justify-content: center;
+      gap: 4vw;
+      margin-top: 2vh;
+    }
+
+    .icon-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 80px;
+      background: white;
+      border-radius: 20px;
+      padding: 12px 0 8px;
+      transition: background-color 0.2s ease;
+    }
+
+    .icon-box:hover {
+      background-color: var(--hover-gray);
+    }
+
+    .icon-box img {
+      width: 32px;
+      height: 32px;
+    }
+
+    .block-label {
+      margin-top: 6px;
+      font-size: 0.75rem;
+      color: white;
+      background: var(--accent-blue);
+      border-radius: 16px;
+      padding: 2px 6px;
+      white-space: nowrap;
+    }
+
+    /* ========== FOOTER ========== */
+    .footer {
+      position: absolute;
+      bottom: 1.5vh;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 4vw;
+      font-size: clamp(0.7rem, 1.2vw, 0.85rem);
+      color: var(--text-light);
+    }
+
+    /* ========== IMAGE SWITCHERS (INVISIBLE) ========== */
+    .blockk1, .blockk2, .blockk3 {
+      position: absolute;
+      width: 30px;
+      height: 24px;
+      background: transparent;
+      cursor: pointer;
+      opacity: 0;
+    }
+
+    /* Hide on mobile if needed, but keep functional */
+    @media (max-width: 768px) {
+      .blockk1, .blockk2, .blockk3 {
+        display: none;
+      }
+    }
